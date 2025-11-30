@@ -26,8 +26,8 @@ export default function Navbar({t, lang, setLang}: NavbarProps) {
                     {/* Desktop Menu */}
                     <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500 items-center">
                         <a href="#problem" className="hover:text-blue-600 transition">{t.nav.problem}</a>
-                        <a href="#solution" className="hover:text-blue-600 transition">{t.nav.solution}</a>
-                        <a href="#business" className="hover:text-blue-600 transition">{t.nav.business}</a>
+                        <a href="#tech" className="hover:text-blue-600 transition">{t.nav.tech}</a>
+                        <a href="#roadmap" className="hover:text-blue-600 transition">{t.nav.roadmap}</a>
                         <a href="#team" className="hover:text-blue-600 transition">{t.nav.team}</a>
                     </div>
 

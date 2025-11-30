@@ -58,24 +58,38 @@ export default function Team({ t }: { t: TranslationContent }) {
     return (
         <Section id="team">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-6">{t.team.title}</h2>
+                <h2 className="text-3xl font-bold mb-8">{t.team.title}</h2>
 
-                {/* Why we can solve this */}
-                <div className="bg-blue-50 p-8 rounded-3xl max-w-4xl mx-auto border border-blue-100 mb-16">
-                    <div className="flex items-center justify-center gap-2 text-blue-700 font-bold mb-4">
-                        <Lightbulb className="w-5 h-5" />
-                        <span>{t.team.whyUsTitle}</span>
+                {/* Why we can solve this - ENHANCED */}
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-10 rounded-3xl max-w-4xl mx-auto border-2 border-blue-200 mb-16 shadow-lg">
+                    <div className="flex items-center justify-center gap-3 text-blue-700 font-bold mb-6">
+                        <Lightbulb className="w-7 h-7" />
+                        <span className="text-2xl">{t.team.whyUsTitle}</span>
                     </div>
-                    <p className="text-slate-700 leading-relaxed text-lg">
+                    <p className="text-slate-800 leading-relaxed text-lg mb-6">
                         {t.team.whyUsDesc}
                     </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                        <div className="bg-white p-4 rounded-xl border border-blue-100">
+                            <div className="text-3xl font-bold text-blue-600 mb-1">5+</div>
+                            <div className="text-sm text-slate-600">Years Combined Experience</div>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-blue-100">
+                            <div className="text-3xl font-bold text-purple-600 mb-1">15+</div>
+                            <div className="text-sm text-slate-600">Doctors Interviewed</div>
+                        </div>
+                        <div className="bg-white p-4 rounded-xl border border-blue-100">
+                            <div className="text-3xl font-bold text-green-600 mb-1">100%</div>
+                            <div className="text-sm text-slate-600">Committed to Healthcare Impact</div>
+                        </div>
+                    </div>
                 </div>
             </motion.div>
 
             <motion.div
                 variants={staggerContainer}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
-                className="grid md:grid-cols-4 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
             >
                 {TEAM_DATA.map((member, index) => {
                     const localizedMember = t.team.members[index];
@@ -107,23 +121,9 @@ export default function Team({ t }: { t: TranslationContent }) {
                             <p className="text-blue-600 font-medium mb-3">{localizedMember.role}</p>
 
                             {/* Experience Badge */}
-                            <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full mb-4">
+                            <div className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full mb-6">
                                 {member.experience} Experience
                             </div>
-
-                            {/* Stack of Company Logos */}
-                            {member.exCompanies.length > 0 && (
-                                <div className="flex justify-center items-center -space-x-3 mb-5">
-                                    {member.exCompanies.map((logo, i) => (
-                                        <div key={i} className="w-9 h-9 rounded-full border-2 border-white bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                                            <img src={logo} alt="work" className="w-full h-full object-contain p-1.5" />
-                                        </div>
-                                    ))}
-                                    <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500 shadow-sm z-10 relative top-[2px]">
-                                        +
-                                    </div>
-                                </div>
-                            )}
 
                             <div className="text-sm text-slate-500 mb-6 px-4 min-h-[40px] flex items-center justify-center leading-tight">
                                 {localizedMember.skills}
