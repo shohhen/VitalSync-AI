@@ -85,7 +85,7 @@ export const translations = {
         team: {
             title: "Наша команда", whyUsTitle: "Почему мы?", whyUsDesc: "Наша команда сочетает глубокие знания в масштабируемых бэкенд-системах (Go) и современной ИИ-инженерии. Мы мотивированы созданием надежных инструментов для медицины.",
             members: [
-                { role: "Backend Lead", skills: "Go, Postgres, Системная архитектура" }, { role: "AI Engineer", skills: "Python, RAG, LLMs, Векторные БД" }, { role: "Frontend Developer", skills: "React, TypeScript, UX/UI Дизайн" }
+                { role: "Backend Lead", skills: "Go, Postgres, Системная архитектура" }, { role: "AI Engineer", skills: "Python, RAG, LLMs, Векторные БД" }, { role: "Frontend Developer", skills: "React, TypeScript, UX/UI Дизайн" }, { role: "Mobile Developer", skills: "Flutter, UX/UI Дизайн" }
             ],
             linkText: "Профиль LinkedIn / GitHub"
         },
@@ -129,7 +129,7 @@ export const translations = {
         team: {
             title: "Jamoa", whyUsTitle: "Nega aynan biz?", whyUsDesc: "Bizning jamoamiz backend tizimlari (Go) va zamonaviy AI muhandisligi bo'yicha chuqur tajribaga ega. Biz tibbiyot uchun ishonchli vositalarni yaratishga intilamiz.",
             members: [
-                { role: "Backend Lead", skills: "Go, Postgres, Tizim Arxitekturasi" }, { role: "AI Engineer", skills: "Python, RAG, LLMs, Vector DBs" }, { role: "Frontend Developer", skills: "React, TypeScript, UX/UI Dizayn" }
+                { role: "Backend Lead", skills: "Go, Postgres, Tizim Arxitekturasi" }, { role: "AI Engineer", skills: "Python, RAG, LLMs, Vector DBs" }, { role: "Frontend Developer", skills: "React, TypeScript, UX/UI Dizayn" }, { role: "Mobile Developer", skills: "Flutter, UX/UI Dizayn" }
             ],
             linkText: "LinkedIn / GitHub profili"
         },
