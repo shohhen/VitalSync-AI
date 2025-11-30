@@ -11,13 +11,13 @@ const TEAM_DATA: TeamMemberStatic[] = [
     {
         name: "Rahmatilla Erkinov",
         photo: "/images/team/member1.jpg", // <--- LOCAL FILE
-        experience: "5+ Years",
+        experience: "3+ Years",
         exCompanies: [
             "/images/logos/logo7.png",      // <--- LOCAL FILE
             "/images/logos/logo5.png",
             "/images/logos/logo4.png",
         ],
-        link: "https://linkedin.com/in/yourprofile"
+        link: "https://www.linkedin.com/in/rakhmatilla-erkinov-17aa1a29a/"
     },
     {
         name: "Asrorbek Qalandarov",
@@ -28,7 +28,7 @@ const TEAM_DATA: TeamMemberStatic[] = [
             "/images/logos/logo2.png",
             "/images/logos/logo3.png",
         ],
-        link: "https://linkedin.com/in/theirprofile"
+        link: "https://www.linkedin.com/in/asrorbek-qalandarov/"
     },
     {
         name: "Shohjahon Karimberganov",
@@ -39,7 +39,7 @@ const TEAM_DATA: TeamMemberStatic[] = [
             "/images/logos/logo6.png",
             "/images/logos/logo4.png"
         ],
-        link: "https://linkedin.com/in/theirprofile"
+        link: "https://www.linkedin.com/in/shohjahon-karimberganov/"
     },
     {
         name: "Ollayorbek Masharipov",
@@ -50,7 +50,7 @@ const TEAM_DATA: TeamMemberStatic[] = [
             "/images/logos/meta.svg",
             "/images/logos/spotify.svg"
         ],
-        link: "https://linkedin.com/in/theirprofile"
+        link: "https://www.linkedin.com/in/ollayorbek-masharipov-5ab1a3202/"
     }
 ];
 

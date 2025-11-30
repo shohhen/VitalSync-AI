@@ -134,9 +134,9 @@ export const translations = {
                 { role: "Backend Developer", skills: "Go, PostgreSQL, REST APIs, System Design" },
                 { role: "AI/ML Engineer", skills: "Python, OpenAI API, NLP, Data Processing" },
                 { role: "Frontend Developer", skills: "React, TypeScript, UI/UX, Data Visualization" },
-                { role: "Mobile/Bot Developer", skills: "Telegram Bot API, Integration, Testing" }
+                { role: "Mobile/Bot Developer", skills: "Flutter, Cross-platform development, UX/UI design, Telegram Bots" }
             ],
-            linkText: "View Profile"
+            linkText: "View Linkedin Profile"
         },
         footer: "© 2025 VitalSync Team. Submitted for AI500! Hackathon."
     },
@@ -277,7 +277,7 @@ export const translations = {
                 { role: "Frontend Developer", skills: "React, TypeScript, WebSockets, UX/UI Design, Визуализация данных" },
                 { role: "Mobile Developer", skills: "Flutter, Кросс-платформа, UX/UI Design, Telegram Bots" }
             ],
-            linkText: "Посмотреть профиль"
+            linkText: "Linkedin профиль"
         },
         footer: "© 2025 Команда VitalSync. Для хакатона AI500!"
     },
@@ -418,7 +418,7 @@ export const translations = {
                 { role: "Frontend Developer", skills: "React, TypeScript, WebSockets, UX/UI dizayn, Ma'lumotlar vizualizatsiyasi" },
                 { role: "Mobile Developer", skills: "Flutter, Ko'p platformali ishlanma, UX/UI dizayn, Telegram Botlar" }
             ],
-            linkText: "Profilni ko'rish"
+            linkText: "Linkedin Profilni ko'rish"
         },
         footer: "© 2025 VitalSync Jamoasi. AI500! Hakatoni uchun."
     }
