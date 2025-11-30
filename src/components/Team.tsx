@@ -42,11 +42,13 @@ const TEAM_DATA: TeamMemberStatic[] = [
         link: "https://linkedin.com/in/theirprofile"
     },
     {
-        name: "Teammate Name",
+        name: "Ollayorbek Masharipov",
         // If no photo is provided, it will fallback to the User Icon
         photo: "/images/team/member4.jpg",
         experience: "4 Years",
         exCompanies: [
+            "/images/logos/meta.svg",
+            "/images/logos/spotify.svg"
         ],
         link: "https://linkedin.com/in/theirprofile"
     }
