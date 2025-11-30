@@ -4,43 +4,51 @@ import { Section } from './Section';
 import { fadeInUp, staggerContainer } from '../utils/animations';
 import type {TranslationContent, TeamMemberStatic} from '../types';
 
-// STATIC TEAM DATA (Invariant)
-// Replace these with your real details and logo URLs
+
+// --- TEAM DATA ---
+// NOTE: Paths must start with "/" and are relative to the 'public' folder.
 const TEAM_DATA: TeamMemberStatic[] = [
     {
-        name: "Your Name",
+        name: "Rahmatilla Erkinov",
+        photo: "/images/team/member1.jpg", // <--- LOCAL FILE
         experience: "5+ Years",
         exCompanies: [
-            "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            "/images/logos/logo7.png",      // <--- LOCAL FILE
+            "/images/logos/logo5.png",
+            "/images/logos/logo4.png",
         ],
-        link: "https://linkedin.com"
+        link: "https://linkedin.com/in/yourprofile"
     },
     {
-        name: "Teammate Name",
+        name: "Asrorbek Qalandarov",
+        photo: "/images/team/member2.jpg", // <--- LOCAL FILE
         experience: "3 Years",
         exCompanies: [
-            "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+            "/images/logos/logo1.png",
+            "/images/logos/logo2.png",
+            "/images/logos/logo3.png",
         ],
-        link: "https://linkedin.com"
+        link: "https://linkedin.com/in/theirprofile"
+    },
+    {
+        name: "Shohjahon Karimberganov",
+        // If no photo is provided, it will fallback to the User Icon
+        photo: "/images/team/member3.jpg",
+        experience: "4 Years",
+        exCompanies: [
+            "/images/logos/logo6.png",
+            "/images/logos/logo4.png"
+        ],
+        link: "https://linkedin.com/in/theirprofile"
     },
     {
         name: "Teammate Name",
+        // If no photo is provided, it will fallback to the User Icon
+        photo: "/images/team/member4.jpg",
         experience: "4 Years",
         exCompanies: [
-            "https://upload.wikimedia.org/wikipedia/commons/e/e1/Meta_Inc._logo.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
         ],
-        link: "https://linkedin.com"
-    },
-    {
-        name: "Teammate Name",
-        experience: "4 Years",
-        exCompanies: [
-            "https://upload.wikimedia.org/wikipedia/commons/e/e1/Meta_Inc._logo.jpg",
-            "https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg"
-        ],
-        link: "https://linkedin.com"
+        link: "https://linkedin.com/in/theirprofile"
     }
 ];
 
@@ -65,17 +73,34 @@ export default function Team({ t }: { t: TranslationContent }) {
             <motion.div
                 variants={staggerContainer}
                 initial="hidden" whileInView="visible" viewport={{ once: true }}
-                className="grid md:grid-cols-4 gap-8"
+                className="grid md:grid-cols-4 gap-6"
             >
                 {TEAM_DATA.map((member, index) => {
-                    // We merge the static data (names/links) with the localized data (role/skills) via index
                     const localizedMember = t.team.members[index];
 
                     return (
                         <motion.div key={index} variants={fadeInUp} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-lg text-center hover:shadow-xl transition-shadow duration-300">
-                            <div className="w-20 h-20 bg-slate-100 rounded-full mx-auto mb-4 flex items-center justify-center text-slate-400">
-                                <Users />
+
+                            {/* PROFILE PHOTO LOGIC */}
+                            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-slate-100 border-4 border-white shadow-sm overflow-hidden flex items-center justify-center relative">
+                                {member?.photo ? (
+                                    <img
+                                        src={member?.photo}
+                                        alt={member?.name}
+                                        className="w-full h-full object-cover"
+                                        onError={(e) => {
+                                            // Fallback if image fails to load
+                                            (e.target as HTMLImageElement).style.display = 'none';
+                                            (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                                        }}
+                                    />
+                                ) : null}
+                                {/* Fallback Icon (Hidden if image loads successfully) */}
+                                <div className={`absolute inset-0 flex items-center justify-center bg-slate-100 ${member.photo ? 'hidden' : ''}`}>
+                                    <Users className="w-10 h-10 text-slate-400" />
+                                </div>
                             </div>
+
                             <h3 className="text-xl font-bold text-slate-900">{member.name}</h3>
                             <p className="text-blue-600 font-medium mb-3">{localizedMember.role}</p>
 
@@ -88,11 +113,11 @@ export default function Team({ t }: { t: TranslationContent }) {
                             {member.exCompanies.length > 0 && (
                                 <div className="flex justify-center items-center -space-x-3 mb-5">
                                     {member.exCompanies.map((logo, i) => (
-                                        <div key={i} className="w-8 h-8 rounded-full border-2 border-white bg-white shadow-sm overflow-hidden flex items-center justify-center">
-                                            <img src={logo} alt="work" className="w-full h-full object-contain p-1" />
+                                        <div key={i} className="w-9 h-9 rounded-full border-2 border-white bg-white shadow-sm overflow-hidden flex items-center justify-center">
+                                            <img src={logo} alt="work" className="w-full h-full object-contain p-1.5" />
                                         </div>
                                     ))}
-                                    <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500 shadow-sm z-10">
+                                    <div className="w-8 h-8 rounded-full border-2 border-white bg-slate-100 flex items-center justify-center text-[10px] font-bold text-slate-500 shadow-sm z-10 relative top-[2px]">
                                         +
                                     </div>
                                 </div>

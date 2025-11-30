@@ -2,8 +2,9 @@ export type Language = 'en' | 'ru' | 'uz';
 
 export interface TeamMemberStatic {
     name: string;
+    photo?: string; // <--- Add this line (optional string)
     experience: string;
-    exCompanies: string[]; // URLs of logos
+    exCompanies: string[]; // Paths to logos in public folder
     link: string;
 }
 
