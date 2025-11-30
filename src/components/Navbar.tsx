@@ -113,7 +113,6 @@ export default function Navbar({t, lang, setLang}: NavbarProps) {
                             <a
                                 key={s}
                                 href={`#${s}`}
-                                ref={(el) => (linkRefs.current[i] = el)}
                                 onClick={(e) => onNavClick(e, i)}
                                 className={`px-2 py-1 transition-colors ${activeIndex === i ? 'text-blue-600 font-semibold' : 'hover:text-blue-600 text-slate-500'}`}
                             >
